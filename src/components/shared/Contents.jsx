@@ -7,8 +7,7 @@ function ContentHead() {
     <div className="c-header">
       <div className="w-auto d-flex justify-content-center align-items-center py-2">
         <h3>
-          Z
-          <strong>Platform</strong>
+          Z-COMPANY
         </h3>
       </div>
     </div>
