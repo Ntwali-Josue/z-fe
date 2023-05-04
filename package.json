@@ -1,6 +1,8 @@
 {
-  "name": "zplatform",
+  "name": "zcompany",
   "version": "0.1.0",
+  "description": "Zcompany",
+  "author": "Ntwali Josue",
   "private": true,
   "dependencies": {
     "axios": "^0.26.1",
