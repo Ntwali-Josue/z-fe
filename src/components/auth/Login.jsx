@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable no-nested-ternary */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable max-len */
@@ -5,15 +6,15 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import {
-  Email, Password, LoginToken,
-} from '../shared/Input';
+import { AiOutlineLogin } from 'react-icons/ai';
+import { Email, Password, LoginToken } from '../shared/Input';
 import { Button, ProgressBar } from '../shared/Elements';
 import { ContentHead } from '../shared/Contents';
 import useAuth from '../../hooks/useAuth';
 import useGlobalState from '../../hooks/useGlobalState';
 import Alert from '../shared/Alert';
 import { logIn, logInWithAccessToken } from '../../api';
+import image from '../../assets/images/home-logo.svg';
 
 function Login({ alert: defaultAlert }) {
   const { setAuth } = useAuth();
@@ -41,7 +42,12 @@ function Login({ alert: defaultAlert }) {
     setPAccessToken(e.target.value);
   };
   const handleLoginSuccess = ({ access_token, user }) => {
-    if (user.m_f_auth === 'on') return navigate('/login/second-factor-auth', { state: { from, user_id: user?.user_id, email: user?.email }, replace: true });
+    if (user.m_f_auth === 'on') {
+      return navigate('/login/second-factor-auth', {
+        state: { from, user_id: user?.user_id, email: user?.email },
+        replace: true,
+      });
+    }
     setEmailErrors(undefined);
     setPasswordErrors(undefined);
     setAuth({ access_token });
@@ -69,9 +75,15 @@ function Login({ alert: defaultAlert }) {
         setStatus('fail');
         const resScode = err?.response?.status;
         if (resScode === 400 || resScode === 401 || resScode === 403) {
-          handleShowAlert({ type: 'err', message: 'Token is either invalid or expired! 😞' });
+          handleShowAlert({
+            type: 'err',
+            message: 'Token is either invalid or expired! 😞',
+          });
         } else {
-          handleShowAlert({ type: 'err', message: 'Something went wrong. please try again latter' });
+          handleShowAlert({
+            type: 'err',
+            message: 'Something went wrong. please try again latter',
+          });
         }
       } else {
         handleLoginSuccess(data);
@@ -86,9 +98,15 @@ function Login({ alert: defaultAlert }) {
         setStatus('fail');
         const resScode = err?.response?.status;
         if (resScode === 400 || resScode === 401 || resScode === 403) {
-          handleShowAlert({ type: 'err', message: 'Invalid email or password! 😞' });
+          handleShowAlert({
+            type: 'err',
+            message: 'Invalid email or password! 😞',
+          });
         } else {
-          handleShowAlert({ type: 'err', message: 'Something went wrong. please try again latter' });
+          handleShowAlert({
+            type: 'err',
+            message: 'Something went wrong. please try again latter',
+          });
         }
       } else {
         handleLoginSuccess(data);
@@ -101,17 +119,27 @@ function Login({ alert: defaultAlert }) {
   };
 
   return (
-    <div className="loginContainer">
+    <div className="loginContainer bg-white">
       <div className="row loginContent">
-        <div className="col-12 right d-flex justify-content-center align-items-center">
-          <div className="c-f-u-content">
-            <ContentHead />
+        <ContentHead />
+        <div className="flex">
+          <div>
+            <img src={image} alt="logo" />
+          </div>
+          <div className="c-f-u-content mt-10 ml-1">
             <div className="c-f-content">
-              {status === 'pending' && (<ProgressBar />)}
+              {status === 'pending' && <ProgressBar />}
               <div className="c-f-i-content py-4 px-5">
-                {(showAlert && alert) && (<Alert info={alert} handleCloseAlert={handleCloseAlert} />)}
-                <div className="c-content-fields w-auto">
-                  <h6>Sign In 🤞</h6>
+                {showAlert && alert && (
+                  <Alert info={alert} handleCloseAlert={handleCloseAlert} />
+                )}
+                <div className="w-auto">
+                  <div className="flex text-blue-500 items-baseline">
+                    <p className="text-blue-500 text-3xl mr-1 font-extrabold">Sign In</p>
+                    <span>
+                      <AiOutlineLogin size={26} />
+                    </span>
+                  </div>
                   <form onSubmit={handleLogin}>
                     {useLoginToken ? (
                       <div>
@@ -120,7 +148,7 @@ function Login({ alert: defaultAlert }) {
                           value={password}
                           label="Personal Access Token"
                           errors={passwordErrors}
-                          placeholder="XXXXXXXXX"
+                          placeholder="xxxxxxxxxxxxxxx"
                           ShowPassword
                         />
                       </div>
@@ -143,7 +171,7 @@ function Login({ alert: defaultAlert }) {
                     <div className="c-c-link px-3 py-2 d-flex flex-row-reverse w-auto">
                       <Link to="/forgot-password">Forgot password?</Link>
                     </div>
-                    <Button label="Sign In" classes="primary-button" />
+                    <Button label="Sign In" classes="primary-button rounded-xl" />
                   </form>
                 </div>
               </div>

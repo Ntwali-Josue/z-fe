@@ -78,7 +78,7 @@
   }
 }
 .btn-1 {
-  @apply w-full inline-block font-[10] bg-white text-[#205AEC] transition-all duration-[0.4s] ease-[ease-in-out] uppercase bg-[300%_100%] px-4 py-[5px] hover:text-[white] hover:shadow-[0px_0px_6px_rgba(171,171,171,0.401)];
+  @apply w-full inline-block font-[10] bg-white text-[#205AEC] transition-all duration-[0.4s] ease-[ease-in-out] uppercase bg-[300%_100%] px-4 py-[5px] hover:text-[white] hover:shadow-[0px_0px_6px_rgba(171,171,171,0.401)] hover:bg-blue-500;
   font-family: dosis !important;
   -o-transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
@@ -89,7 +89,7 @@
 } */
 
 .btn-1.active {
-  @apply bg-[#205AEC] text-white;
+  @apply bg-blue-400 text-white;
 }
 
 .custom-shape-divider-top-1651954358 {
@@ -756,13 +756,18 @@ input {
   @apply bg-[#205AEC] border-0 after:block;
 }
 .input-text-content .agree-container .checkmark:after {
-  @apply w-[5px] h-2.5 rotate-45 border-[solid] border-[0_3px_3px_0] left-2.5 top-1.5;
+  @apply w-[5px] h-2.5 rotate-45 border-[solid] left-2.5 top-1.5;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
 }
 .input-text-content .td-st a {
   @apply underline text-[#bbb] font-semibold hover:text-[#212dad];
 }
+.danger-button {
+  @apply bg-[#ec2027] text-[white] border-0 hover:bg-[#da1d1d];
+  font-family: "Poppins", sans-serif;
+}
+
 .primary-button {
   @apply bg-[#205AEC] text-[white] border-0 hover:bg-[#1d27da];
   font-family: "Poppins", sans-serif;
@@ -1038,7 +1043,7 @@ input {
   @apply bg-[white] shadow-[0_0_10px_0_rgba(0,0,0,0.1)];
 }
 .path-container a {
-  @apply text-[#797979] text-[0.9em] capitalize hover:text-[#205AEC];
+  @apply text-blue-500 text-[0.9em] capitalize hover:text-[#205AEC] hover:underline;
 }
 .profile-pic-button {
   @apply text-[1em] cursor-pointer text-[#205AEC] rounded-[5px];
@@ -1198,7 +1203,7 @@ input {
   @apply bg-[white];
 }
 .profile-container .j-c-right h6 {
-  @apply text-[#205AEC] text-[large] uppercase;
+  @apply text-blue-500 text-[large] uppercase;
   font-family: dosis, sans-serif;
 }
 .profile-img-container {

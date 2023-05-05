@@ -67,23 +67,24 @@ function Header() {
           <div className="d-flex justify-content-between  align-items-center">
             <div className="user-logo d-flex justify-content-center align-items-center name_s">
               <h3 className="mt-3">
-                Z
-                <strong>PLATFORM</strong>
+                Z-COMPANY
               </h3>
             </div>
-            <div className="px-2"><ProfilePic user={userInfo} /></div>
-            <div className="dropdown">
-              <div
-                className="profile-pic-button d-flex align-items-center justify-content-center py-2 px-3"
-                id="dropdownUser1"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                <div className="d-none d-md-block"><span><i className="bi bi-chevron-down" /></span></div>
+            <div className="flex">
+              <ProfilePic user={userInfo} />
+              <div className="dropdown">
+                <div
+                  className="profile-pic-button d-flex align-items-center justify-content-center py-2 px-3"
+                  id="dropdownUser1"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <div className="d-none d-md-block"><span><i className="bi bi-chevron-down" /></span></div>
+                </div>
+                <ul className="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+                  {menuItems.map(item => (<MenuItem key={key()} item={item} />))}
+                </ul>
               </div>
-              <ul className="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-                {menuItems.map(item => (<MenuItem key={key()} item={item} />))}
-              </ul>
             </div>
           </div>
         </div>

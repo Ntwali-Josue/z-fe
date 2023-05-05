@@ -210,7 +210,9 @@ function EditProfile({ alert: defaultAlert }) {
               </div>
             </div>
 
-            <Button label="Save" classes="primary-button mt-3" />
+            <div className="flex justify-end gap-x-4">
+              <Button label="Save" classes="primary-button mt-3 rounded-xl px-10" />
+            </div>
           </form>
         </div>
       </div>

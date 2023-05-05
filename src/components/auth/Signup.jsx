@@ -14,6 +14,7 @@ import { ContentHead } from '../shared/Contents';
 import VerificationSent from './VerificationSent';
 import { signUp } from '../../api';
 import Alert from '../shared/Alert';
+import image from '../../assets/images/home-logo.svg';
 
 function SignUp({ alert: defaultAlert }) {
   const [email, setEmail] = useState();
@@ -90,11 +91,14 @@ function SignUp({ alert: defaultAlert }) {
   }
 
   return (
-    <div className="signUpContainer loginContainer">
+    <div className="signUpContainer loginContainer bg-white">
       <div className="row loginContent">
-        <div className="col-12 right d-flex justify-content-center align-items-center">
+        <ContentHead />
+        <div className="flex md:justify-center lg:justify-normal">
+          <div className="hidden lg:block">
+            <img src={image} alt="logo" />
+          </div>
           <div className="c-f-u-content">
-            <ContentHead />
             <div className="c-f-content">
               {status === 'pending' && (<ProgressBar />)}
               <div className="c-f-i-content py-4 px-5">

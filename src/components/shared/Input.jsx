@@ -123,8 +123,8 @@ function LoginToken({ handleOnChange, errors }) {
       <div className="d-flex flex-row">
         <div className="td-st pt-2">
           <label className="agree-container">
-            <input type="checkbox" onChange={handleOnChange} />
-            <span className="checkmark" />
+            <input type="checkbox" className="text-white" onChange={handleOnChange} />
+            <span className="checkmark text-white" />
           </label>
         </div>
         <span className="pt-2">Use Personal Access Token</span>

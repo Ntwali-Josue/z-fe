@@ -93,6 +93,8 @@ function ProfileVerifyAccount({ alert: defaultAlert }) {
         <div className="col-12">
           {(showAlert && alert) && (<Alert info={alert} handleCloseAlert={handleCloseAlert} />)}
           <h4 className="mb-3">Identification information</h4>
+          <p>To verify your account, you have to provide identification information and provide the proof of the official document. If you did so and your account is still unverified, that might be becouse your request was rejected due to different reasons. In that case, you will have to check your email and check why your account could not be verified.</p>
+          <br />
           <form className="needs-validation" noValidate onSubmit={handleProfileUpadate}>
             <div className="row g-3">
               <div className="col-12">
@@ -103,7 +105,7 @@ function ProfileVerifyAccount({ alert: defaultAlert }) {
                 </div>
               </div>
               <div className="col-12 d-flex flex-column">
-                <label htmlFor="official_doc_Image" className="form-label">Official Document image(Prof of official document)</label>
+                <label htmlFor="official_doc_Image" className="form-label">Official Document image(Proof of official document)</label>
                 <input onChange={handlePhoto} type="file" name="official_doc_Image" id="official_doc_Image" accept="image/*" />
                 { photo && (
                   <div>
