@@ -10,6 +10,9 @@ platform ZPlatform.
 - React
 - tailwind
 
+## Backend Repo 
+- [z-be](https://github.com/Ntwali-Josue/z-be)
+
 ## Getting Started 
 
 To get a local copy up and running follow these simple example steps.
@@ -24,13 +27,13 @@ REACT_APP_API_URL=
 REACT_APP_UPLOAD_BASE= 
 REACT_APP_UPLOAD_PRESET= 
 ```
-### Install
+### Install ⚙️
 - Run `npm install` to install required dependecies for running the project.
 
-### Execute
+### Execute 🛠️
 - Run `npm start` to run and use the project
 
-## Author
+## Author 👨🏾‍💻
 
 👤 **KARANGWA NTWALI JOSUE**
 
