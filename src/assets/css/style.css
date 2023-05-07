@@ -1220,7 +1220,7 @@ input {
   @apply flex;
 }
 .profile-image {
-  @apply w-[100px] h-[100px] text-[large] text-[white] bg-[#205AEC] cursor-pointer rounded-[50%] border-[3px] border-solid border-[#205AEC];
+  @apply w-[100px] h-[100px] text-[large] text-[white] cursor-pointer rounded-[50%] border border-solid border-[#205AEC];
   image-rendering: pixelated;
 }
 .settings {

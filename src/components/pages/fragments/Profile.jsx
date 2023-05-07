@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 // import { Button } from '../../shared/Elements';
 import { BsPersonFill } from 'react-icons/bs';
+import { GoVerified } from 'react-icons/go';
 import useGlobalState from '../../../hooks/useGlobalState';
 
 export default function Profile() {
@@ -28,7 +29,14 @@ export default function Profile() {
           <div className="d-flex flex-column j-c-left-inner justify-content-center align-items-center">
             <div className="profile-img-container mt-5">
               {photo ? (
-                <img className="profile-image" src={photo} alt="profile" />
+                user?.account_verified === 'VERIFIED' && (
+                <div>
+                  <img className="relative inline-flex items-center w-full h-full text-sm font-medium text-center text-white rounded-xl profile-image" src={photo} alt="profile" />
+                  <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-blue-500 border-2 border-white rounded-full -bottom-0 -right-0">
+                    <GoVerified />
+                  </div>
+                </div>
+                )
               ) : (
                 <div className="profile-image d-flex justify-content-center align-items-center">
                   <span>{avatar}</span>

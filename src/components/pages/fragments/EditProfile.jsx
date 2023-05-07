@@ -3,6 +3,7 @@
 /* eslint-disable max-len */
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { BsPersonFill } from 'react-icons/bs';
 import { Button, ProgressBar } from '../../shared/Elements';
 import Alert from '../../shared/Alert';
 import { updateProfile } from '../../../api';
@@ -28,7 +29,7 @@ function EditProfile({ alert: defaultAlert }) {
   const [status, setStatus] = useState();
   const [file, setFile] = useState();
 
-  const avatar = (firstName || lastName) ? `${firstName[0]}${lastName[0]}`.toUpperCase() : '@';
+  const avatar = (firstName || lastName) ? `${firstName[0]}${lastName[0]}`.toUpperCase() : <BsPersonFill />;
 
   const handleProfilePhoto = e => {
     const files = e?.target?.files;
