@@ -53,7 +53,12 @@ export default function Profile() {
             <Link to="/profile/settings" className={`btn-1 ${pathname === '/profile/settings' && 'active'} py-2`}>Settings</Link>
             {
               (userRole === 'User' && user?.account_verified === 'UNVERIFIED') && (
-                <Link to="/profile/verify" className={`btn-1 ${pathname === '/profile/settings' && 'active'} py-2`}>Verification</Link>
+                <Link to="/profile/verify" className={`btn-1 ${pathname === '/profile/settings' && 'active'} py-2`}>REQUEST VERIFICATION</Link>
+              )
+            }
+            {
+              (userRole === 'User' && user?.account_verified === 'PENDING') && (
+                <Link to="/profile/verify" className={`btn-1 pointer-events-none ${pathname === '/profile/settings' && ''} py-2`}>VERIFICATION PENDING</Link>
               )
             }
           </div>
