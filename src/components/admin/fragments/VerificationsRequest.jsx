@@ -118,12 +118,12 @@ function RequestItem({ request: { status, account, request_id }, handleRefreshIt
           </div>
           <div className={`st-${status?.toLowerCase() || 'unverified'}`}>
             <span className="py-2 px-3 align-items-center mx-2 text-small">
-              {status?.toUpperCase() || 'UNVERIFIED'}
+              {account?.account_verified}
             </span>
           </div>
         </div>
         <div className="d-flex justify-content-end">
-          <div><Button handleOnClick={handleShowDetails} label="View Details" classes="primary-button" /></div>
+          <div><Button handleOnClick={handleShowDetails} label={`${showDetails ? 'Close' : 'View'} Details`} classes="primary-button" /></div>
         </div>
       </div>
       {showDetails && (
