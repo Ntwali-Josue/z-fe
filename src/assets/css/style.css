@@ -496,10 +496,10 @@ input {
   @apply relative h-1 w-full bg-[white] overflow-hidden rounded-sm;
 }
 .progress {
-  @apply relative h-1 w-full bg-[#ece4f4] overflow-hidden rounded-sm;
+  @apply relative h-1 w-full bg-blue-700 overflow-hidden rounded-sm;
 }
 .progress .determinate {
-  @apply absolute bg-[#ece4f4] transition-[width] duration-[0.3s] ease-linear left-0 inset-y-0;
+  @apply absolute bg-blue-700 transition-[width] duration-[0.3s] ease-linear left-0 inset-y-0;
   -webkit-transition: width 0.3s linear;
 }
 .progress .indeterminate {

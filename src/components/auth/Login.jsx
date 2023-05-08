@@ -126,7 +126,7 @@ function Login({ alert: defaultAlert }) {
           <div>
             <img src={image} alt="logo" />
           </div>
-          <div className="c-f-u-content mt-10 ml-1">
+          <div className="c-f-u-content lg:mt-20 ml-1">
             <div className="c-f-content">
               {status === 'pending' && <ProgressBar />}
               <div className="c-f-i-content py-4 px-5">

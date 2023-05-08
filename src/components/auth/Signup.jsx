@@ -95,16 +95,16 @@ function SignUp({ alert: defaultAlert }) {
       <div className="row loginContent">
         <ContentHead />
         <div className="flex md:justify-center lg:justify-normal">
-          <div className="hidden lg:block">
+          <div>
             <img src={image} alt="logo" />
           </div>
-          <div className="c-f-u-content">
+          <div className="c-f-u-content lg:mt-20">
             <div className="c-f-content">
               {status === 'pending' && (<ProgressBar />)}
               <div className="c-f-i-content py-4 px-5">
                 {(showAlert && alert) && (<Alert info={alert} handleCloseAlert={handleCloseAlert} />)}
                 <div className="c-content-fields w-auto">
-                  <h6>Sign Up 🤞</h6>
+                  <h6>Sign Up</h6>
                   <form
                     onSubmit={handleSignUp}
                     className="needs-validation"
